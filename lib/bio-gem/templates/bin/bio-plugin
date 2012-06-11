@@ -24,12 +24,14 @@ require 'optparse'
 
 # Uncomment when using the bio-logger 
 # require 'bio-logger'
+# log = Bio::Log::LoggerPlus.new '<%= project_name %>'
+# log.outputters = Bio::Log::Outputter.stderr 
 # Bio::Log::CLI.logger('stderr')
 # Bio::Log::CLI.trace('info')
 
 options = {:example_switch=>false,:show_help=>false}
 opts = OptionParser.new do |o|
-  o.banner = "Usage: #{File.basename($0)} [options] reponame\ne.g. #{File.basename($0)} the-perfect-gem"
+  o.banner = "Usage: #{File.basename($0)} [options] filename\ne.g. #{File.basename($0)} test.txt"
 
   o.on('--example_parameter [EXAMPLE_PARAMETER]', 'TODO: put a description for the PARAMETER') do |example_parameter|
     # TODO: your logic here, below an example
@@ -73,11 +75,16 @@ end
 begin
   opts.parse!(ARGV)
 
-  # Uncomment the following when using the bio-logger 
+  # Uncomment when using the bio-logger
   # Bio::Log::CLI.configure('<%= project_name %>')
+  # logger = Bio::Log::LoggerPlus['<%= project_name %>']
+  # Log parsed options and remaining arguments in ARGV
+  # logger.info [options, ARGV]
 
   # TODO: your code here
   # use options for your logic
 rescue OptionParser::InvalidOption => e
   options[:invalid_argument] = e.message
 end
+
+
