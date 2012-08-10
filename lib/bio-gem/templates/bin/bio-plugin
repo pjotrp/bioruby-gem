@@ -13,7 +13,7 @@ VERSION_FILENAME=File.join(gempath,'VERSION')
 version = File.new(VERSION_FILENAME).read.chomp
 
 # print banner
-print "<%= bin_name %> #{version} by <%= user_name %> <%= Time.now.year %>\n"
+print "<%= bin_name %> #{version} (biogem Ruby #{RUBY_VERSION}) by <%= user_name %> <%= Time.now.year %>\n"
 
 if ARGV.size == 0
   print USAGE
