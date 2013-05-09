@@ -24,6 +24,7 @@ class Jeweler
 
         require 'optparse'
         @opts = OptionParser.new do |o|
+          self[:directory]='.'
           o.banner = "Usage: #{File.basename($0)} [options] reponame\ne.g. #{File.basename($0)} the-perfect-gem"
 
           o.on('--directory [DIRECTORY]', 'specify the directory to generate into') do |directory|
@@ -60,6 +61,10 @@ class Jeweler
           o.on('--with-engine [NAMESPACE]', 'create a Rails engine with the namespace given in input. Set default database creation') do |namespace|
             self[:biogem_engine] = namespace
             self[:biogem_db] = true
+          end
+          
+          o.on('--with-wrapper', 'setup the biogem to be a wrapper around a command line application') do
+            self[:wrapper] = true
           end
           
           o.separator ""
