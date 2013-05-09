@@ -140,6 +140,8 @@ and much more
 
 == Contributing to Biogem
 
+If you are interested in hacking Biogem, read https://github.com/pjotrp/bioruby-gem/blob/master/doc/biogem-hacking.md
+
 The source code repositories for Biogem and http://biogems.info
 website are on github
 
@@ -199,7 +201,7 @@ Recent versions of Biogem may have more options. For a full list run
 
 == Copyright
 
-Copyright (c) 2010-2012 Raoul J.P. Bonnal. See LICENSE.txt for
+Copyright (c) 2010-2013 Raoul J.P. Bonnal. See LICENSE.txt for
 further details.
 
 
