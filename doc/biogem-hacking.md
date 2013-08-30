@@ -41,7 +41,7 @@ sure to remove the bioruby-foo directory first
 Recommended biogem switches are --with-bin and --rspec, e.g.
 
 ```sh
-      bundle exec ./bin/biogem --with-bin --rspec --cucumber foo
+      bundle exec ./bin/biogem --with-bin --rspec --cucumber --no-create-repo foo
 ```
 
 For a foreign function interface use
@@ -60,7 +60,7 @@ all available options with
 Note that we are running biogem here within bundler. This may cause a rakefile
 error after generating the plugin (nesting bundler is not a good idea). This
 can simply be fixed by running the rake by hand in the plugin directory after
-generation
+generating
 
 ```sh
       cd bioruby-foo
